@@ -1,0 +1,102 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+
+
+
+<body id="wrapper">
+
+    {% block body %}
+
+
+    <section id="top_banner">
+        <div class="banner">
+            <div class="inner text-center">
+                <h2>ログアウト</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="login-reg">
+        <div class="container">
+            <!-- Top content -->
+            <div class="row">
+                <div class="col-md-6 col-sm-12 forms-right-icons">
+                    <div class="section-heading">
+                        <h2>お疲れ様でした。</h2>
+                        <p class="subheading">投稿される方は、もう一度ログインしてください。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Logout</h3>
+                                <p>ご利用ありがとうございました。</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <div class="form-bottom">
+                                <h3>ログアウトしました。</h3>
+                        </div>
+                    </div>
+
+                    <div class="social-login">
+                        <h3>こちらからログインする</h3>
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </a>
+                            <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                <i class="fa fa-twitter"></i> Twitter
+                            </a>
+                            <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                <i class="fa fa-google-plus"></i> Google Plus
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+    </section>
+
+    <section id="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <small>Copyright© Atrae, Inc. All Right Reserved.</small>
+            </div>
+        </div>
+    </section>
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+                <div id="tootlbar_colors">
+                    <button class="color" style="background-color:#1abac8;"
+                        onclick="mytheme(0)"></button>
+                    <button class="color" style="background-color:#ff8a00;" onclick="mytheme(1)">
+                    </button>
+                    <button class="color" style="background-color:#b4de50;" onclick="mytheme(2)">
+                    </button>
+                    <button class="color" style="background-color:#e54e53;" onclick="mytheme(3)">
+                    </button>
+                    <button class="color" style="background-color:#1abc9c;" onclick="mytheme(4)">
+                    </button>
+                    <button class="color" style="background-color:#159eee;" onclick="mytheme(5)">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>
+    </div>
+
+    {% endblock body %}
+
+</body>

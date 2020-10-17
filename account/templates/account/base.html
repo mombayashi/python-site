@@ -1,0 +1,347 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        name="viewport">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/skin.css" %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static "js/index.js" %}"></script>
+</head>
+
+<body id="wrapper">
+
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+91 090 000 0000</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">monbayashi@xxx.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <h1>門林のサイト</h1><span>ポートフォリオ</span>
+                        </a>
+                    </div>
+
+                    <div id="navbar" class="collapse navbar-collapse navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{% url 'blog-home' %}">Home</a></li>
+
+
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Log In</a></li>
+                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/.nav-ends -->
+
+    {% block body %}
+
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('static/img/nz_10.jpeg');">
+                </div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading"><span>初めて作った </span>ポートフォリオ</h1>
+                    <p class="banner_txt">PythonのDjangoの機能を活かしたホームページ<br></p>
+                    <h5>初心者なので優しい目で見てください。</h5>
+                    <div class="slider_btn">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="fill" style="background-image:url('static/img/nz_02.jpeg');">
+                </div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading">エンジニアを目指しています。</h1>
+                    <p class="banner_txt">学習内容：Python　HTML　CSS　Javascript<br>
+                                            GitHub MySQL　AWS Linux</p>
+                    <div class="slider_btn">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="fill" style="background-image:url('static/img/cebu_01.jpeg');">
+                </div>
+                <div class="carousel-caption slide-up">
+                    <h1 class="banner_heading">まだまだ未熟者ですが<br>よろしくお願いします。</h1>
+                    <p class="banner_txt">Ryosuke mombayashi<br>門林良輔</p>
+                    <div class="slider_btn">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <i
+                class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <i
+                class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-laptop feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>これから</h4>
+                        <p>実務未経験ですが１人前のエンジニアになれるように、実務でスキルを磨き、学習で知識を蓄えていきたいです。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-bullhorn feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>世界へ</h4>
+                        <p>色んな国へ行ってみたい。</p>
+                        <i class="caret-right"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-support feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>作る</h4>
+                        <p>今までに映像、舞台などの作品に関わったり、イベント会場の施工も経験していました。１つのモノが完成すると達成感に満ち溢れ、そのサービスを提供してお客様が喜んだり、楽しんでくれている姿を見ると嬉しいです。</p>
+                        <i class="caret-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="image-holder col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-left">
+            <div class="background-imgholder">
+                <img src="{% static 'img/1.jpg' %}" alt=" about" class="img-responsive"
+                    style="display:none;" />
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="col-md-7 col-md-offset-5 col-sm-8 col-sm-offset-2 col-xs-12 text-inner ">
+                <div class="text-block">
+                    <div class="section-heading">
+
+                        {% for post in posts %}
+                        <h1>{{ post.title }} <small>written by:
+                            </small><span>{{ post.author }}</span></h1>
+                        <p class="subheading">{{ post.date_posted|date:'Y-m-d P' }}</p>
+
+                        <ul class="aboutul">
+                            <li> <i class="fa fa-check"></i>{{ post.content }}</li>
+                        </ul>
+                        <hr>
+                        {% endfor %}
+
+                    </div>
+                    <button type="button" class="btn btn-primary slide">Learn More <i
+                            class="fa fa-caret-right"></i> </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-laptop feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>これから</h4>
+                        <p>実務未経験ですが１人前のエンジニアになれるように、実務でスキルを磨き、学習で知識を蓄えていきたいです。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-bullhorn feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>世界へ</h4>
+                        <p>色んな国へ行ってみたい。</p>
+                        <i class="caret-right"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12 block">
+                    <div class="col-md-2 col-xs-2"><i class="fa fa-support feature_icon"></i></div>
+                    <div class="col-md-10 col-xs-10">
+                        <h4>作る</h4>
+                        <p>今までに映像、舞台などの作品に関わったり、イベント会場の施工も経験していました。１つのモノが完成すると達成感に満ち溢れ、そのサービスを提供してお客様が喜んだり、楽しんでくれている姿を見ると嬉しいです。</p>
+                        <i class="caret-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonial">
+        <div class="container">
+            <div class="section-heading text-center">
+                <div class="col-md-12 col-xs-12">
+                    <h1>門林良輔 <span>とは？</span></h1>
+                    <p class="subheading">スタント時代<br>
+                    施工時代<br>
+                その後</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12 block ">
+                    <div class="testimonial_box">
+                        <p>スタント時代は大阪・東京・海外で舞台、テレビ、映画、ネット番組に出演。<br>
+                            アクションチーム在籍中、毎年開催される台湾公演にも毎年参加し、大型の舞台のショーにも毎回出演。<br>
+                            拠点を東京に移しフリーランスとして活動開始し映画やCMなど映像の仕事に携わる。<br>
+                            すぐにアメリカの作品の仕事の案件の話が入り参加する。ニュージーランドに9ヶ月在住。<br>
+                            帰国後、ネット番組やモーションキャプチャー、舞台に出演。<br>
+                        スーツアクター、スタント、コーディネーター、スタントパフォーマー、ワイヤーリガー、指導員などの業務をする。 </p>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="testimonial_user">
+                        <div class="user-image"><img src="{% static 'img/flatwhite.png' %}" alt="user"
+                                class="img-responsive" /></div>
+                        <div class="user-info">
+                            <h5>門林</h5>
+                            <p>スタント時代</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-12 block">
+                    <div class="testimonial_box">
+                        <p>大学生の時、大阪で派遣のアルバイトで施工を中心に仕事をする。スタントを本格的にするために上京した時にしばらく休業する。<br>
+                        海外での仕事が終わり帰国した時に施工の仕事を再開する。その時にアルバイト先であるグループ会社の施工請負会社に声をかけられ就職する。<br>
+                    取引先が大阪の時に仲が良かった取引先だったのもあり、入社してすぐにその取引先の担当をする。<br>
+                資格を活かしす作業をしたり、施工管理をメインとする。 </p>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="testimonial_user">
+                        <div class="user-image"><img src="{% static 'img/flatwhite.png' %}" alt="user"
+                                class="img-responsive" /></div>
+                        <div class="user-info">
+                            <h5>門林</h5>
+                            <p>施工時代</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 block">
+                    <div class="testimonial_box">
+                        <p>大学生の時にHTML、CSS、Java、Photoshop、illustratorなど様々な講義を受講する。<br>
+                        しかし、大学に通いながらスタントの仕事をしていたので就職は考えていませんでした。<br>
+                    それから数年がたち、ふとした瞬間にプログラミングもう一度やりたいなと思うようになり、前職の仕事が落ち着き退社し、プログラミングスクールに通う。<br>
+                スクールではPythonをメインに学びPythonのDjango、機械学習、GitHub、MySQL、Linuxを学び、独学ではHTML、CSS、JavaScriptを学習。<br>
+            </p>
+                    </div>
+                    <div class="arrow-down"></div>
+                    <div class="testimonial_user">
+                        <div class="user-image"><img src="{% static 'img/flatwhite.png' %}" alt="user"
+                                class="img-responsive" /></div>
+                        <div class="user-info">
+                            <h5>門林</h5>
+                            <p>エンジニア時代（実務未経験）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <small>Copyright© Atrae, Inc. All Right Reserved.</small>
+            </div>
+        </div>
+    </section>
+
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+                <div id="tootlbar_colors">
+                    <button class="color" style="background-color:#1abac8;"
+                        onclick="mytheme(0)"></button>
+                    <button class="color" style="background-color:#ff8a00;" onclick="mytheme(1)">
+                    </button>
+                    <button class="color" style="background-color:#b4de50;" onclick="mytheme(2)">
+                    </button>
+                    <button class="color" style="background-color:#e54e53;" onclick="mytheme(3)">
+                    </button>
+                    <button class="color" style="background-color:#1abc9c;" onclick="mytheme(4)">
+                    </button>
+                    <button class="color" style="background-color:#159eee;" onclick="mytheme(5)">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>
+    </div>
+
+    {% endblock body %}
+
+</body>
+
+</html>
